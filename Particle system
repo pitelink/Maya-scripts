@@ -1,0 +1,8 @@
+string $window = `window -title "粒子发射系统"
+       -iconName "Short Name"
+       -widthHeight 200 500`;
+columnLayout -adjustableColumn true;
+       button -label "发射粒子" -command ("emitter -pos 0 0 0 -type omni -r 100 -sro 0 -nuv 0 -cye none -cyi 1 -spd 1 -srn 0 -nsp 1 -tsp 0 -mxd 0 -mnd 0 -dx 1 -dy 0 -dz 0 -sp 0 ;nParticle;connectDynamic -em emitter1 nParticle1;");
+       button -label "Close" -command ("deleteUI -window " + $window);
+setParent ..;
+showWindow $window;
